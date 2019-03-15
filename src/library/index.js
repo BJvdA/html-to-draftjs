@@ -79,8 +79,8 @@ function genFragment(
     node instanceof HTMLVideoElement
   ) {
     const entityConfig = {};
-    entityConfig.src = node.firstElementChild ? node.firstElementChild.getAttribute('src') || node.src : node.src;
-    entityConfig.controls = node.getAttribute ? node.getAttribute('controls') || node.controls : node.controls;
+    entityConfig.src = node.firstChild && node.firstChild.getAttribute ? node.firstChild.getAttribute('src') || node.src : node.src;
+    entityConfig.controls = node.controls;
     entityConfig.alt = node.alt;
     entityConfig.height = node.style.height;
     entityConfig.width = node.style.width;
